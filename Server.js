@@ -64,26 +64,6 @@ async function find(collection, searchTerm, print) {
   }
 }
 
-async function findOneAndUpdate(
-  collection,
-  searchTerm,
-  updateParameters,
-  print
-) {
-  const query = { searchTerm };
-  if (testJSON(updateParameters)) {
-    const result = await collection.findOneAndUpdate(
-      searchTerm,
-      updateParameters
-    );
-    if (print) {
-      console.log(result);
-    }
-  } else {
-    console.log("Error. The data is not in the JSON format.");
-  }
-}
-
 async function insertOne(collection, document) {
   if (testJSON(document)) {
     if (testJSON(document)) {
@@ -103,19 +83,11 @@ function handleItemsGetRequest(request, response) {
   response.send(getItemsDatabase);
 }
 
-//Function for updating lessons.
-function handleItemsPutRequest(request, response) {
-  const searchTerm = request.body.searchTerm;
-  const updateParameter = request.body.updateParameter;
-  findOneAndUpdate(itemsCollection, searchTerm, updateParameter, false);
-  response.send({ message: "Data updated." });
-}
-
 //Function for posting an order to the database.
 function handleOrderPostRequest(request, response) {
   console.log(request);
   insertOne(ordersCollection, request.body);
-  response.send({ message: "Data posted." });
+  response.send({"message": "Data posted."});
 }
 
 //The HTTP requests.
@@ -126,6 +98,20 @@ app.post("/orders", handleOrderPostRequest);
 //Listens to the port.
 app.listen(port);
 console.log(`Listening on Port ${port}.`);
+
+//Example put request:
+/*
+{
+  "searchTerm": {
+      "classType": "Electrical Engineering"
+  },
+  "updateParameter": {
+      "$set": {
+          "price": 300
+      }
+  }
+}
+*/
 
 //Example put request:
 /*
