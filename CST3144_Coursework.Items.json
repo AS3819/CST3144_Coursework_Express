@@ -1,11 +1,11 @@
 [{
   "_id": {
-    "$oid": "6717db12dfb3886c4cbd190f"
+    "$oid": "6749e0002c0363f892c498a6"
   },
   "id": 0,
   "title": "After School Class",
   "classType": "Maths",
-  "location": "London",
+  "location": "Central London",
   "price": 100,
   "spaces": 5,
   "image": "src/assets/Maths_Icon.png",
@@ -13,51 +13,51 @@
 },
 {
   "_id": {
-    "$oid": "6717db84dfb3886c4cbd1910"
+    "$oid": "6749e1522c0363f892c498a7"
   },
   "id": 1,
   "title": "Computer Class",
-  "classType": "Maths",
-  "location": "London",
+  "classType": "Computer Science",
+  "location": "Hendon",
   "price": 120,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/Computer_Icon.png",
+  "imageAlt": "Computer Icon"
 },
 {
   "_id": {
-    "$oid": "6717dba4dfb3886c4cbd1911"
+    "$oid": "6749e1ce2c0363f892c498a8"
   },
   "id": 2,
   "title": "English Class",
   "classType": "English",
-  "location": "London",
+  "location": "Hendon",
   "price": 90,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/English_Icon.png",
+  "imageAlt": "English Icon"
 },
 {
   "_id": {
-    "$oid": "6717dbc1dfb3886c4cbd1912"
+    "$oid": "6749e1df2c0363f892c498a9"
   },
   "id": 3,
   "title": "Chess Lesson",
   "classType": "Chess",
-  "location": "London",
+  "location": "Central London",
   "price": 140,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/Chess_Icon.png",
+  "imageAlt": "Chess Icon"
 },
 {
   "_id": {
-    "$oid": "6717dc40dfb3886c4cbd1913"
+    "$oid": "6749e1fa2c0363f892c498aa"
   },
   "id": 4,
   "title": "Maths Lesson",
   "classType": "Maths",
-  "location": "London",
+  "location": "Hendon",
   "price": 110,
   "spaces": 5,
   "image": "src/assets/Maths_Icon.png",
@@ -65,66 +65,66 @@
 },
 {
   "_id": {
-    "$oid": "6717dc53dfb3886c4cbd1914"
+    "$oid": "6749e2202c0363f892c498ab"
   },
   "id": 5,
   "title": "History Lesson",
   "classType": "History",
-  "location": "London",
+  "location": "Hendon",
   "price": 100,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/History_Icon.png",
+  "imageAlt": "History Icon"
 },
 {
   "_id": {
-    "$oid": "6717dc7bdfb3886c4cbd1915"
+    "$oid": "6749e23b2c0363f892c498ac"
   },
   "id": 6,
   "title": "Electrical Engineering Class",
   "classType": "Electrical Engineering",
-  "location": "London",
+  "location": "Central London",
   "price": 200,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/Electrical_Icon.png",
+  "imageAlt": "Electrical Icon"
 },
 {
   "_id": {
-    "$oid": "6717dc91dfb3886c4cbd1916"
+    "$oid": "6749e2652c0363f892c498ad"
   },
   "id": 7,
   "title": "Chemistry Class",
   "classType": "Chemistry",
-  "location": "London",
+  "location": "Cambridge",
   "price": 160,
-  "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "spaces": 2,
+  "image": "src/assets/Chemistry_Icon.png",
+  "imageAlt": "Chemistry Icon"
 },
 {
   "_id": {
-    "$oid": "6717dca3dfb3886c4cbd1917"
+    "$oid": "6749e27b2c0363f892c498ae"
   },
   "id": 8,
   "title": "Computer Science Class",
   "classType": "Computer Science",
-  "location": "London",
+  "location": "Cambridge",
   "price": 180,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/Computer_Icon.png",
+  "imageAlt": "Computer Icon"
 },
 {
   "_id": {
-    "$oid": "6717dcbddfb3886c4cbd1918"
+    "$oid": "6749e28f2c0363f892c498af"
   },
   "id": 9,
   "title": "Geography Class",
   "classType": "Geography Class",
-  "location": "London",
+  "location": "Hendon",
   "price": 110,
   "spaces": 5,
-  "image": "src/assets/Maths_Icon.png",
-  "imageAlt": "Maths Icon"
+  "image": "src/assets/Geography_Icon.png",
+  "imageAlt": "Geography Icon"
 }]
