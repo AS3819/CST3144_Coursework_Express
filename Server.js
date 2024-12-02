@@ -18,8 +18,9 @@ let getOrdersDatabase;
 const app = express();
 const username = "AS3819";
 const password = "mBWXKo2fCFixEEwm";
+const server = "fsdcluster.0giwf.mongodb.net";
 const connectionURILocal = "mongodb://127.0.0.1:27017?retryWrites=true&w=majority";
-const connectionURI = `mongodb+srv://${username}:${password}@fsdcluster.0giwf.mongodb.net/`;
+const connectionURI = `mongodb+srv://${encodeURIComponent(username)}:${encodeURIComponent(password)}@${server}/?retryWrites=true&w=majority`;
 
 //Opens the MongoDB server.
 const client = new MongoClient(connectionURI, {
@@ -65,7 +66,7 @@ app.use("/static", (req, res, next) => {
   fs.access(filePath, fs.constants.F_OK, (error) => {
     if (error) {
       console.log(`File not found: ${filePath}`);
-      res.status(404).send({ error: "Image not found.", idiot: imagePath, dolt: filePath });
+      res.status(404).send({ error: "Image not found." });
     } else {
       console.log(`File exists: ${filePath}`);
       next();
