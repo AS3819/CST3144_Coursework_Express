@@ -20,7 +20,7 @@ const username = "AS3819";
 const password = "mBWXKo2fCFixEEwm";
 const databaseName = "CST3144_Coursework";
 const connectionURILocal = "mongodb://127.0.0.1:27017?retryWrites=true&w=majority";
-const connectionURI = `mongodb+srv://${username}:${password}@fsdcluster.0giwf.mongodb.net/${databaseName}?retryWrites=true&w=majority&ssl=true&sslValidate=false"`;
+const connectionURI = `mongodb+srv://${username}:${password}@fsdcluster.0giwf.mongodb.net/${databaseName}?retryWrites=true&w=majority&ssl=true&sslValidate=false`;
 
 //Opens the MongoDB server.
 const client = new MongoClient(connectionURI, {
