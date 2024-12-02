@@ -19,8 +19,7 @@ const app = express();
 const username = "AS3819";
 const password = "mBWXKo2fCFixEEwm";
 const databaseName = "CST3144_Coursework";
-const connectionURILocal =
-  "mongodb://127.0.0.1:27017?retryWrites=true&w=majority";
+const connectionURILocal = "mongodb://127.0.0.1:27017?retryWrites=true&w=majority";
 const connectionURI = `mongodb+srv://${username}:${password}@fsdcluster.0giwf.mongodb.net/${databaseName}?retryWrites=true&w=majority&ssl=true&sslValidate=false"`;
 
 //Opens the MongoDB server.
@@ -30,14 +29,8 @@ const client = new MongoClient(connectionURI, {
     strict: false,
     deprecationErrors: true,
   },
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  ssl: true,
-  sslValidate: false,
-  sslCA: fs.readFileSync("<path_to_ca_cert>"),
-  sslCert: fs.readFileSync("<path_to_client_cert>"),
-  sslKey: fs.readFileSync("<path_to_client_key>"),
 });
+
 
 //Connects to the MongoDB server.
 const database = client.db(databaseName);
@@ -74,9 +67,7 @@ app.use("/static", (req, res, next) => {
   fs.access(filePath, fs.constants.F_OK, (error) => {
     if (error) {
       console.log(`File not found: ${filePath}`);
-      res
-        .status(404)
-        .send({ error: "Image not found.", idiot: imagePath, dolt: filePath });
+      res.status(404).send({ error: "Image not found.", idiot: imagePath, dolt: filePath });
     } else {
       console.log(`File exists: ${filePath}`);
       next();
@@ -84,7 +75,7 @@ app.use("/static", (req, res, next) => {
   });
 });
 
-app.use("/static", express.static(imagePath));
+app.use('/static', express.static(imagePath));
 
 //Function for testing whether code is in the JSON format.
 function testJSON(data) {
