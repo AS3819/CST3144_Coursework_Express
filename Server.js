@@ -10,7 +10,7 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 import { fileURLToPath } from "url";
 
 //Website data.
-const port = 8080;
+const port = 10000;
 let getItemsDatabase;
 let getOrdersDatabase;
 
