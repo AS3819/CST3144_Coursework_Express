@@ -18,9 +18,8 @@ let getOrdersDatabase;
 const app = express();
 const username = "AS3819";
 const password = "mBWXKo2fCFixEEwm";
-const databaseName = "CST3144_Coursework";
 const connectionURILocal = "mongodb://127.0.0.1:27017?retryWrites=true&w=majority";
-const connectionURI = `mongodb+srv://${username}:${password}@fsdcluster.0giwf.mongodb.net/${databaseName}?retryWrites=true&w=majority&ssl=true&sslValidate=false`;
+const connectionURI = `mongodb+srv://${username}:${password}@fsdcluster.0giwf.mongodb.net/`;
 
 //Opens the MongoDB server.
 const client = new MongoClient(connectionURI, {
@@ -31,9 +30,8 @@ const client = new MongoClient(connectionURI, {
   },
 });
 
-
 //Connects to the MongoDB server.
-const database = client.db(databaseName);
+const database = client.db("CST3144_Coursework");
 const itemsCollection = database.collection("Items");
 const ordersCollection = database.collection("Orders");
 
