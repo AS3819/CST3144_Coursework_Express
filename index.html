@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="CSS/Stylesheet.css" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+<body>
+  <div id="app">
+    <div class="pageTitle">
+      <header>
+        <h1><span v-text="sitename"></span></h1>
+      </header>
+    </div>
+    <div class="lessonsPage">
+      <div class="lessonsPage" id="sortControls">
+        <div>
+          <h3>Sort by:</h3>
+          <input type="radio" id="sortByID" value="id" v-model="sortType" />
+          <label for="sortByID">ID</label>
+          <input type="radio" id="sortByName" value="title" v-model="sortType" />
+          <label for="sortByName">Name</label>
+          <input type="radio" id="sortBySubject" value="classType" v-model="sortType" />
+          <label for="sortBySubject">Subject</label>
+          <input type="radio" id="sortByLocation" value="location" v-model="sortType"/>
+          <label for="sortByLocation">Location</label>
+          <input type="radio" id="sortByPrice" value="price" v-model="sortType"/>
+          <label for="sortByPrice">Price</label>
+          <input type="radio" id="sortBySpaces" value="spaces" v-model="sortType"/>
+          <label for="sortBySubject">Spaces</label>
+        </div>
+        <div>
+          <input type="radio" id="sortByAscending" value=true v-model="sortAscending"/>
+          <label for="sortBySubject">Ascending</label>
+          <input type="radio" id="sortByDescending" value=false v-model="sortAscending"/>
+          <label for="sortByDescending">Descending</label>
+        </div>
+      </div>
+      <div class="lessonsPage" id="searchBarContainer">
+        <input type="text" id="searchBar" v-model="searchInput" @input="search" placeholder="Search..." />
+      </div>      
+    </div>
+    <div id="shoppingCart">
+      <button @click="displayCart" v-if="cartNotEmpty()">
+        Items in cart: <span v-text="cart.length"></span>
+      </button>
+      <button disabled="disabled" v-else>Items in cart: <span v-text="cart.length"></button>
+    </div>
+    <div class="lessonsPage" id="lessonsList">
+      <div class="lessonsPage" v-for="(lesson, index) in sortedLessons" :key="lesson.id">
+        <h2><span v-text="lesson.title"></span></h2>
+        <h3><span v-text="lesson.classType"></span></h3>
+        <img v-bind:src="lesson.image" v-bind:alt="lesson.imageAlt" />
+        <p><span v-text="lesson.location"></span></p>
+        <p>£<span v-text="lesson.price"></span></p>
+        <p>Spaces available: <span v-text="lesson.spaces"></span></p>
+        <button @click="addToCart(lesson.id)" v-if="canAddToCart(lesson)">Add to cart</button>
+        <button disabled="disabled" v-else>Add to cart</button>
+        <br></br>
+        <br></br>
+      </div>
+    </div>
+    <div class="checkoutPage" id="checkoutList">
+      <div class="checkoutListContainer">
+        <ul class="checkoutList" v-for="(lesson, index) in filteredCart" :key="index">
+          <li>
+            <p><span class="category-label">Title:</span> <span v-text="lesson.title"></span></p>
+            <p><span class="category-label">Subject:</span> <span v-text="lesson.classType"></span></p>
+            <p><span class="category-label">Price:</span> £<span v-text="lesson.price"></span></p>
+            <p><span class="category-label">Count:</span> <span v-text="findMaxSpaces(lesson.id) - lesson.spaces"></span></p>
+            <button @click="addToCart(lesson.id)" v-if="canAddToCart(lesson)">Add to cart</button>
+            <button disabled="disabled" v-else>Add to cart</button>
+            <button @click="removeFromCart(lesson.id)" v-if="canRemoveFromCart(lesson)">Remove one from cart</button>
+            <button disabled="disabled" v-else>Remove one from cart</button>
+            <button @click="removeAllFromCart(lesson.id)" v-if="canRemoveFromCart(lesson)">Remove all from cart</button>
+            <button disabled="disabled" v-else>Remove all from cart</button>
+          </li>
+        </ul>
+      </div>        
+      <div class="checkoutOptions">
+        <label>Name:</label>
+        <input id="checkoutNameInput" type="text" v-model="checkoutName">
+        <label>Telephone Number:</label>
+        <input id="checkoutTelephoneInput" type="text" v-model="checkoutTelephone">
+        <button @click="confirmOrder" :disabled="!isFormValid">Confirm Order</button>
+        <p id="checkoutConfirmationMessage" v-text="confirmationMessage"></p>
+      </div>
+    </div>
+    <div v-for="lesson in sortedLessons"></div>
+  </div>
+  <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+  <script type="module" src="JavaScript/Products.js"></script>
+</body>
+</html>
