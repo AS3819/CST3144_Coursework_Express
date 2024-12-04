@@ -98,7 +98,7 @@
   "classType": "Chemistry",
   "location": "Cambridge",
   "price": 160,
-  "spaces": 2,
+  "spaces": 5,
   "image": "src/assets/Chemistry_Icon.png",
   "imageAlt": "Chemistry Icon"
 },
@@ -121,10 +121,75 @@
   },
   "id": 9,
   "title": "Geography Class",
-  "classType": "Geography Class",
+  "classType": "Geography",
   "location": "Hendon",
   "price": 110,
   "spaces": 5,
   "image": "src/assets/Geography_Icon.png",
   "imageAlt": "Geography Icon"
+},
+{
+  "_id": {
+    "$oid": "674fbd49987b7e669dda3a77"
+  },
+  "id": 10,
+  "title": "Chess Class",
+  "classType": "Chess",
+  "location": "Cambridge",
+  "price": 240,
+  "spaces": 5,
+  "image": "src/assets/Chess_Icon.png",
+  "imageAlt": "Chess Icon"
+},
+{
+  "_id": {
+    "$oid": "674fbd9e987b7e669dda3a78"
+  },
+  "id": 11,
+  "title": "Chemistry Lesson",
+  "classType": "Chess",
+  "location": "Oxford",
+  "price": 170,
+  "spaces": 5,
+  "image": "src/assets/Chemistry_Icon.png",
+  "imageAlt": "Chemistry Icon"
+},
+{
+  "_id": {
+    "$oid": "674fbddd987b7e669dda3a79"
+  },
+  "id": 12,
+  "title": "History Class",
+  "classType": "Chess",
+  "location": "Oxford",
+  "price": 120,
+  "spaces": 5,
+  "image": "src/assets/History_Icon.png",
+  "imageAlt": "History Icon"
+},
+{
+  "_id": {
+    "$oid": "674fbf24987b7e669dda3a7d"
+  },
+  "id": 13,
+  "title": "Linguistics Class",
+  "classType": "English",
+  "location": "Cambridge",
+  "price": 180,
+  "spaces": 5,
+  "image": "src/assets/English_Icon.png",
+  "imageAlt": "English Icon"
+},
+{
+  "_id": {
+    "$oid": "674fbfce7362b14696ea2d12"
+  },
+  "id": 14,
+  "title": "Artificial Intelligence Class",
+  "classType": "Computer Science",
+  "location": "Oxford",
+  "price": 250,
+  "spaces": 5,
+  "image": "src/assets/Computer_Icon.png",
+  "imageAlt": "Computer Icon"
 }]
